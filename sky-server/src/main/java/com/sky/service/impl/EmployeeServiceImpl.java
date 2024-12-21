@@ -39,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         //密码比对
-        // TODO 对前端的铭文密码 妈的
+        // TODO 对前端的铭文密码
         if (!password.equals(employee.getPassword())) {
             //密码错误
             throw new PasswordErrorException(MessageConstant.PASSWORD_ERROR);
