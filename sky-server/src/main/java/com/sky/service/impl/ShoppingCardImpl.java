@@ -64,4 +64,12 @@ public class ShoppingCardImpl implements ShoppingCardService {
             shoppCartMapper.insert(shoppingCart);
         }
     }
+
+    @Override
+    public List<ShoppingCart> showShoppingCart() {
+        Long currentId = BaseContext.getCurrentId();
+        ShoppingCart build = ShoppingCart.builder().userId(currentId).build();
+        List<ShoppingCart> list = shoppCartMapper.list(build);
+        return list;
+    }
 }
